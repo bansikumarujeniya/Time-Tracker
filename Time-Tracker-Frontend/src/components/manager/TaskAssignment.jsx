@@ -21,13 +21,13 @@ const TaskAssignment = () => {
 
     const fetchModulesWithTasks = async () => {
         try {
-            const response = await axios.get("http://localhost:3000/project-modules");
+            const response = await axios.get("https://time-tracker-68a2.onrender.com/project-modules");
             const modulesData = response.data?.data || [];
             setModules(modulesData);
 
             const allTasks = await Promise.all(
                 modulesData.map(module =>
-                    axios.get(`http://localhost:3000/tasks/module/${module._id}`)
+                    axios.get(`https://time-tracker-68a2.onrender.com/tasks/module/${module._id}`)
                         .then(res => ({
                             moduleName: module.moduleName,
                             moduleId: module._id,
@@ -51,7 +51,7 @@ const TaskAssignment = () => {
 
     const fetchDevelopers = async () => {
         try {
-            const res = await axios.get("http://localhost:3000/users?role=Developer");
+            const res = await axios.get("https://time-tracker-68a2.onrender.com/users?role=Developer");
             const filtered = (res.data?.data || []).filter(
                 dev => dev.roleId?.name === "Developer"
             );
@@ -77,7 +77,7 @@ const TaskAssignment = () => {
         try {
             await Promise.all(
                 unassignedTasks.map(task =>
-                    axios.post("http://localhost:3000/user-tasks", {
+                    axios.post("https://time-tracker-68a2.onrender.com/user-tasks", {
                         userId,
                         taskId: task._id,
                         logDate: new Date().toISOString(),
