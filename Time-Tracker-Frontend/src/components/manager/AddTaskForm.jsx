@@ -35,7 +35,7 @@ const AddTaskForm = ({ taskId, refreshTasks }) => {
         console.log("✅ Extracted moduleId:", moduleId);
 
         if (taskId) {
-            axios.get(`http://localhost:3000/tasks/${taskId}`)
+            axios.get(`https://time-tracker-68a2.onrender.com/tasks/${taskId}`)
                 .then(response => {
                     const { title, description, priority, statusId, totalMinute, moduleId, projectId } = response.data.data;
                     setTaskData({
@@ -66,10 +66,10 @@ const AddTaskForm = ({ taskId, refreshTasks }) => {
 
         try {
             if (taskId) {
-                await axios.put(`http://localhost:3000/tasks/${taskId}`, taskData);
+                await axios.put(`https://time-tracker-68a2.onrender.com/tasks/${taskId}`, taskData);
                 toast.success("✅ Task updated successfully!", { position: "top-center", autoClose: 2000 });
             } else {
-                await axios.post("http://localhost:3000/tasks", taskData);
+                await axios.post("https://time-tracker-68a2.onrender.com/tasks", taskData);
                 toast.success("✅ Task added successfully!", { position: "top-center", autoClose: 2000 });
             }
 
