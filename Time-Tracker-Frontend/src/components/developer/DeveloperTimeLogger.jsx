@@ -34,7 +34,7 @@ const DeveloperTimeLogger = () => {
 
   const fetchUserTasks = async (userId) => {
     try {
-      const res = await axios.get(`http://localhost:3000/user-tasks/${userId}`);
+      const res = await axios.get(`https://time-tracker-68a2.onrender.com/user-tasks/${userId}`);
       setTasks(res.data?.data || []);
     } catch (err) {
       console.error("❌ Error fetching tasks:", err);
@@ -45,7 +45,7 @@ const DeveloperTimeLogger = () => {
 
   const fetchLoggedTasks = async (userId) => {
     try {
-      const res = await axios.get(`http://localhost:3000/time-logs`);
+      const res = await axios.get(`https://time-tracker-68a2.onrender.com/time-logs`);
       const userLogs = res.data?.data?.filter(log => log.userId?._id === userId);
       const loggedIds = userLogs.map(log => log.taskId?._id);
       setLoggedTaskIds(loggedIds);
