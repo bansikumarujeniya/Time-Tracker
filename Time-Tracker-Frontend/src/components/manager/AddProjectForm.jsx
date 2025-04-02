@@ -26,7 +26,7 @@ export const AddProjectForm = () => {
         };
 
         try {
-            const response = await axios.post('http://localhost:3000/projects/add', formattedData);
+            const response = await axios.post('https://time-tracker-68a2.onrender.com/projects/add', formattedData);
 
             toast.success('Project added successfully!', {
                 position: "top-center",
