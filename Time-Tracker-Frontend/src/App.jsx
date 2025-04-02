@@ -39,7 +39,7 @@ import AdminReport from "./components/admin/AdminReport";
 
 function App() {
 
-  axios.defaults.baseURL = "http://localhost:3000"
+  axios.defaults.baseURL = "https://time-tracker-68a2.onrender.com"
 
   const location = useLocation();
 
