@@ -25,7 +25,7 @@ const DeveloperTimeLogList = () => {
 
   const fetchLogs = async () => {
     try {
-      const res = await axios.get("http://localhost:3000/time-logs");
+      const res = await axios.get("https://time-tracker-68a2.onrender.com/time-logs");
       const allLogs = res.data?.data || [];
 
       const userLogs = allLogs.filter((log) => log.userId?._id === userId);
