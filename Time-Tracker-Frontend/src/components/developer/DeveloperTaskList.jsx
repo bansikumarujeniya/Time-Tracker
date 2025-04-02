@@ -26,7 +26,7 @@ const DeveloperTaskList = () => {
 
   const fetchDeveloperTasks = async (userId) => {
     try {
-      const response = await axios.get(`http://localhost:3000/user-tasks/${userId}`);
+      const response = await axios.get(`https://time-tracker-68a2.onrender.com/user-tasks/${userId}`);
       if (response.data && Array.isArray(response.data.data)) {
         const fetchedTasks = response.data.data;
         setTasks(fetchedTasks);
@@ -69,7 +69,7 @@ const DeveloperTaskList = () => {
     }
 
     try {
-      await axios.put(`http://localhost:3000/user-tasks/${taskId}`, updatedData);
+      await axios.put(`https://time-tracker-68a2.onrender.com/user-tasks/${taskId}`, updatedData);
       toast.success("✅ Task updated successfully!", { position: "top-center" });
       fetchDeveloperTasks(userId);
     } catch (error) {
