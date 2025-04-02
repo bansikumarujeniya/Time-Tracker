@@ -29,7 +29,7 @@ const DeveloperTaskDetails = () => {
 
   const fetchUserTaskDetails = async () => {
     try {
-      const response = await axios.get(`http://localhost:3000/user-tasks/single/${taskId}`);
+      const response = await axios.get(`https://time-tracker-68a2.onrender.com/user-tasks/single/${taskId}`);
       const userTask = response.data.data;
 
       if (userTask && userTask.taskId) {
@@ -57,13 +57,13 @@ const DeveloperTaskDetails = () => {
 
     try {
 
-      await axios.put(`http://localhost:3000/user-tasks/${taskId}`, {
+      await axios.put(`https://time-tracker-68a2.onrender.com/user-tasks/${taskId}`, {
         workedHr,
         logDate: new Date().toISOString().split("T")[0],
       });
 
       // Update task status
-      await axios.put(`http://localhost:3000/tasks/${task._id}`, { statusId });
+      await axios.put(`https://time-tracker-68a2.onrender.com/tasks/${task._id}`, { statusId });
 
       toast.success("✅ Task updated successfully!", {
         position: "top-center",
