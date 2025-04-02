@@ -32,7 +32,7 @@ const AddModuleForm = ({ moduleId, refreshModules }) => {
     useEffect(() => {
         if (moduleId) {
             setLoading(true);
-            axios.get(`http://localhost:3000/project-modules/${moduleId}`)
+            axios.get(`https://time-tracker-68a2.onrender.com/project-modules/${moduleId}`)
                 .then(response => {
                     const { moduleName, description, estimatedHours, startDate, statusId, projectId } = response.data.data;
                     setModuleData({
@@ -64,10 +64,10 @@ const AddModuleForm = ({ moduleId, refreshModules }) => {
         setIsSubmitting(true);
         try {
             if (moduleId) {
-                await axios.put(`http://localhost:3000/project-modules/${moduleId}`, moduleData);
+                await axios.put(`https://time-tracker-68a2.onrender.com/project-modules/${moduleId}`, moduleData);
                 toast.success("Module updated successfully!", { position: "top-center", autoClose: 2000 });
             } else {
-                await axios.post("http://localhost:3000/project-modules", moduleData);
+                await axios.post("https://time-tracker-68a2.onrender.com/project-modules", moduleData);
                 toast.success("Module added successfully!", { position: "top-center", autoClose: 2000 });
             }
 
