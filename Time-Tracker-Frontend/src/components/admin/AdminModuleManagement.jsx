@@ -24,7 +24,7 @@ const AdminModuleManagement = () => {
 
   const fetchModules = async () => {
     try {
-      const res = await axios.get("http://localhost:3000/project-modules");
+      const res = await axios.get("https://time-tracker-68a2.onrender.com/project-modules");
       setModules(res.data?.data || []);
       setFilteredModules(res.data?.data || []);
     } catch (err) {
@@ -36,7 +36,7 @@ const AdminModuleManagement = () => {
 
   const fetchProjects = async () => {
     try {
-      const res = await axios.get("http://localhost:3000/projects");
+      const res = await axios.get("https://time-tracker-68a2.onrender.com/projects");
       setProjects(res.data?.data || []);
     } catch (err) {
       console.error("❌ Error fetching projects:", err);
@@ -70,7 +70,7 @@ const AdminModuleManagement = () => {
 
     if (confirmed.isConfirmed) {
       try {
-        await axios.delete(`http://localhost:3000/project-modules/${id}`);
+        await axios.delete(`https://time-tracker-68a2.onrender.com/project-modules/${id}`);
         toast.success("✅ Module deleted", { position: "top-center" });
         fetchModules();
       } catch (err) {
