@@ -27,7 +27,7 @@ const TaskList = () => {
 
     const fetchTasks = async (moduleId) => {
         try {
-            const response = await axios.get(`http://localhost:3000/tasks/module/${moduleId}`);
+            const response = await axios.get(`https://time-tracker-68a2.onrender.com/tasks/module/${moduleId}`);
             if (response.data && Array.isArray(response.data.data)) {
                 setTasks(response.data.data);
             } else {
