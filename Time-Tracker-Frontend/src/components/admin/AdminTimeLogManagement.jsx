@@ -26,9 +26,9 @@ const AdminTimeLogManagement = () => {
   const fetchData = async () => {
     try {
       const [logsRes, usersRes, projectsRes] = await Promise.all([
-        axios.get("http://localhost:3000/time-logs"),
-        axios.get("http://localhost:3000/users"),
-        axios.get("http://localhost:3000/projects"),
+        axios.get("https://time-tracker-68a2.onrender.com/time-logs"),
+        axios.get("https://time-tracker-68a2.onrender.com/users"),
+        axios.get("https://time-tracker-68a2.onrender.com/projects"),
       ]);
 
       const allLogs = logsRes.data?.data || [];
@@ -106,7 +106,7 @@ const AdminTimeLogManagement = () => {
 
     if (confirm.isConfirmed) {
       try {
-        await axios.delete(`http://localhost:3000/time-logs/${logId}`);
+        await axios.delete(`https://time-tracker-68a2.onrender.com/time-logs/${logId}`);
         toast.success("✅ Log deleted successfully", { position: "top-center" });
         fetchData();
       } catch (err) {
