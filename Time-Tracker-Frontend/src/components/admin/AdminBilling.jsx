@@ -42,7 +42,7 @@ const AdminBilling = () => {
 
   const fetchBillings = async () => {
     try {
-      const res = await axios.get("http://localhost:3000/billings");
+      const res = await axios.get("https://time-tracker-68a2.onrender.com/billings");
       setBillings(res.data?.data || []);
     } catch (err) {
       toast.error("❌ Failed to fetch billings", { position: "top-center" });
@@ -53,7 +53,7 @@ const AdminBilling = () => {
 
   const fetchProjects = async () => {
     try {
-      const res = await axios.get("http://localhost:3000/projects");
+      const res = await axios.get("https://time-tracker-68a2.onrender.com/projects");
       setProjects(res.data?.data || []);
     } catch (err) {
       console.error("❌ Error fetching projects:", err);
@@ -62,7 +62,7 @@ const AdminBilling = () => {
 
   const fetchUsers = async () => {
     try {
-      const res = await axios.get("http://localhost:3000/users");
+      const res = await axios.get("https://time-tracker-68a2.onrender.com/users");
       setUsers(res.data?.data || []);
     } catch (err) {
       console.error("❌ Error fetching users:", err);
@@ -72,7 +72,7 @@ const AdminBilling = () => {
   const handleBillingSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post("http://localhost:3000/billings/add", billingForm);
+      await axios.post("https://time-tracker-68a2.onrender.com/billings/add", billingForm);
       toast.success("✅ Billing added successfully", { position: "top-center" });
       fetchBillings();
       setBillingForm({ userId: "", projectId: "", hourlyPrice: "", payment: "Pending" });
