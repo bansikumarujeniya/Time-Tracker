@@ -22,7 +22,7 @@ const AdminUserManagement = () => {
 
   const fetchUsers = async () => {
     try {
-      const res = await axios.get("http://localhost:3000/users");
+      const res = await axios.get("https://time-tracker-68a2.onrender.com/users");
       const allUsers = res.data?.data || [];
 
       const nonAdmins = allUsers.filter(user => user.roleId?.name !== "Admin");
@@ -55,7 +55,7 @@ const AdminUserManagement = () => {
     if (!roleId) return;
 
     try {
-      await axios.put(`http://localhost:3000/users/${userId}`, { roleId });
+      await axios.put(`https://time-tracker-68a2.onrender.com/users/${userId}`, { roleId });
       toast.success("✅ Role updated successfully", { position: "top-center" });
       fetchUsers();
       setEditedRoles(prev => {
@@ -83,7 +83,7 @@ const AdminUserManagement = () => {
 
     if (result.isConfirmed) {
       try {
-        await axios.delete(`http://localhost:3000/users/${userId}`);
+        await axios.delete(`https://time-tracker-68a2.onrender.com/users/${userId}`);
         toast.success("✅ User deleted", { position: "top-center" });
         fetchUsers();
       } catch (err) {
