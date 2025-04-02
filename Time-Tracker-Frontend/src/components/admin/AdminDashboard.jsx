@@ -46,11 +46,11 @@ const AdminDashboard = () => {
     const fetchDashboardData = async () => {
         try {
             const [users, projects, modules, tasks, logs] = await Promise.all([
-                axios.get("http://localhost:3000/users"),
-                axios.get("http://localhost:3000/projects"),
-                axios.get("http://localhost:3000/project-modules"),
-                axios.get("http://localhost:3000/tasks"),
-                axios.get("http://localhost:3000/time-logs"),
+                axios.get("https://time-tracker-68a2.onrender.com/users"),
+                axios.get("https://time-tracker-68a2.onrender.com/projects"),
+                axios.get("https://time-tracker-68a2.onrender.com/project-modules"),
+                axios.get("https://time-tracker-68a2.onrender.com/tasks"),
+                axios.get("https://time-tracker-68a2.onrender.com/time-logs"),
             ]);
 
             const userList = users?.data?.data || [];
