@@ -43,7 +43,7 @@ const AdminReport = () => {
 
   const fetchReports = async () => {
     try {
-      const res = await axios.get("http://localhost:3000/reports");
+      const res = await axios.get("https://time-tracker-68a2.onrender.com/reports");
       setReports(res.data?.data || []);
     } catch (err) {
       toast.error("❌ Failed to fetch reports", { position: "top-center" });
@@ -54,7 +54,7 @@ const AdminReport = () => {
 
   const fetchProjects = async () => {
     try {
-      const res = await axios.get("http://localhost:3000/projects");
+      const res = await axios.get("https://time-tracker-68a2.onrender.com/projects");
       setProjects(res.data?.data || []);
     } catch (err) {
       console.error("❌ Error fetching projects:", err);
@@ -63,7 +63,7 @@ const AdminReport = () => {
 
   const fetchUsers = async () => {
     try {
-      const res = await axios.get("http://localhost:3000/users");
+      const res = await axios.get("https://time-tracker-68a2.onrender.com/users");
       const allUsers = res.data?.data || [];
       setUsers(allUsers);
      
@@ -80,7 +80,7 @@ const AdminReport = () => {
 
   const fetchTasks = async () => {
     try {
-      const res = await axios.get("http://localhost:3000/tasks");
+      const res = await axios.get("https://time-tracker-68a2.onrender.com/tasks");
       setTasks(res.data?.data || []);
     } catch (err) {
       console.error("❌ Error fetching tasks:", err);
@@ -90,7 +90,7 @@ const AdminReport = () => {
   const handleReportSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post("http://localhost:3000/reports/generate", reportForm);
+      await axios.post("https://time-tracker-68a2.onrender.com/reports/generate", reportForm);
       toast.success("✅ Report generated successfully", { position: "top-center" });
       fetchReports();
       setReportForm({ userId: "", projectId: "", taskId: "" });
