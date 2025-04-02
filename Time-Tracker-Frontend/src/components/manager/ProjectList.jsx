@@ -12,7 +12,7 @@ const ProjectList = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    axios.get("http://localhost:3000/projects")
+    axios.get("https://time-tracker-68a2.onrender.com/projects")
       .then((response) => {
         console.log("API Response:", response.data);
 
