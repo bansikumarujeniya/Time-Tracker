@@ -33,7 +33,7 @@ const AdminTaskManagement = () => {
 
   const fetchTasks = async () => {
     try {
-      const res = await axios.get("http://localhost:3000/tasks");
+      const res = await axios.get("https://time-tracker-68a2.onrender.com/tasks");
       setTasks(res.data?.data || []);
       setFilteredTasks(res.data?.data || []);
     } catch (err) {
@@ -68,7 +68,7 @@ const AdminTaskManagement = () => {
 
     if (confirmed.isConfirmed) {
       try {
-        await axios.delete(`http://localhost:3000/tasks/${id}`);
+        await axios.delete(`https://time-tracker-68a2.onrender.com/tasks/${id}`);
         toast.success("✅ Task deleted", { position: "top-center" });
         fetchTasks();
       } catch (err) {
