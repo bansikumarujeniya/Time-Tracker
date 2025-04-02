@@ -51,7 +51,7 @@ const reportsRoutes = require("./src/routes/ReportsRoutes");
 app.use(reportsRoutes);
 
 // Database Connection
-mongoose.connect("mongodb://127.0.0.1:27017/Time_Tracker_Database")
+mongoose.connect("mongodb+srv://bansikumar1307:<Bansikumar1307>@cluster0.mcrpc.mongodb.net/?")
     .then(() => {
         console.log("Database connected....");
     })
