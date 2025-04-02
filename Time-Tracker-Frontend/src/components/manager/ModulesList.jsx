@@ -13,7 +13,7 @@ const ModulesList = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    axios.get(`http://localhost:3000/project-modules?projectId=${projectId}`)
+    axios.get(`https://time-tracker-68a2.onrender.com/project-modules?projectId=${projectId}`)
       .then(response => {
         if (response.data && Array.isArray(response.data.data)) {
           setModules(response.data.data);
