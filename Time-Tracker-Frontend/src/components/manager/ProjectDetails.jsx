@@ -21,7 +21,7 @@ export const ProjectDetails = () => {
     useEffect(() => {
         const fetchProject = async () => {
             try {
-                const response = await axios.get(`http://localhost:3000/projects/${id}`);
+                const response = await axios.get(`https://time-tracker-68a2.onrender.com/projects/${id}`);
                 if (response.data && response.data.data) {
                     setProject(response.data.data);
                     setFormData({
