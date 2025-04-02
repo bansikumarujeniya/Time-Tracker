@@ -22,7 +22,7 @@ const AdminProjectManagement = () => {
 
   const fetchProjects = async () => {
     try {
-      const res = await axios.get("http://localhost:3000/projects");
+      const res = await axios.get("https://time-tracker-68a2.onrender.com/projects");
       setProjects(res.data?.data || []);
       setFilteredProjects(res.data?.data || []);
     } catch (err) {
@@ -59,7 +59,7 @@ const AdminProjectManagement = () => {
 
     if (confirmed.isConfirmed) {
       try {
-        await axios.delete(`http://localhost:3000/projects/${id}`);
+        await axios.delete(`https://time-tracker-68a2.onrender.com/projects/${id}`);
         toast.success("✅ Project deleted", { position: "top-center" });
         fetchProjects();
       } catch (err) {
